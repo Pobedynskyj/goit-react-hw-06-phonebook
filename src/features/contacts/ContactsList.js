@@ -1,6 +1,6 @@
-import { selectFilteredContact } from 'features/StoreFeature/selectors';
+import { selectFilteredContact } from 'features/redux/selectors';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeContact } from '../StoreFeature/Contacts.slice';
+import { removeContact } from '../redux/Contacts.slice';
 
 export const ContactsList = () => {
   const dispatch = useDispatch();

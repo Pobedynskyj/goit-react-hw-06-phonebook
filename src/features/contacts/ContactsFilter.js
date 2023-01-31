@@ -1,7 +1,8 @@
-import { useDispatch } from 'react-redux';
-import { setFilter } from '../StoreFeature/Contacts.slice';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilter } from '../redux/Contacts.slice';
 
 export const ContactsFilter = () => {
+  const filter = useSelector(state => state.filter);
   const dispatch = useDispatch();
 
   const onFilterChanged = filter => {
@@ -13,6 +14,7 @@ export const ContactsFilter = () => {
       <input
         placeholder="Search contact"
         onChange={e => onFilterChanged(e.target.value)}
+        value={filter}
       />
     </>
   );
